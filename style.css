@@ -1,0 +1,221 @@
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 기본 글꼴 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* 링크 스타일 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 네비게이션 호버 애니메이션 */
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #10B981);
+    transition: left 0.3s ease;
+}
+
+nav a:hover::after {
+    left: 0;
+}
+
+/* 히어로 섹션 커스텀 크기 */
+.hero-circle {
+    width: 400px;
+    height: 400px;
+}
+
+.hero-emoji {
+    font-size: 180px;
+}
+
+.hero-title {
+    font-size: 120px;
+}
+
+.hero-subtitle {
+    font-size: 50px;
+}
+
+/* 히어로 섹션 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home h1,
+#home p,
+#home a {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#home h1 {
+    animation-delay: 0.2s;
+}
+
+#home p:first-of-type {
+    animation-delay: 0.4s;
+}
+
+#home p:last-of-type {
+    animation-delay: 0.5s;
+}
+
+#home a {
+    animation-delay: 0.6s;
+}
+
+/* 프로필 이미지 회전 애니메이션 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#home .w-40 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+#home .w-40:hover {
+    animation: rotate 2s linear infinite;
+}
+
+/* 카드 호버 효과 */
+.group {
+    transition: all 0.3s ease;
+}
+
+.group:hover {
+    transform: translateY(-8px);
+}
+
+/* 기술 스택 카드 애니메이션 */
+.group p {
+    transition: color 0.3s ease;
+}
+
+/* 그라데이션 텍스트 */
+.bg-gradient-to-r {
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+}
+
+.bg-gradient-to-r:hover {
+    animation: gradientShift 2s ease;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 버튼 호버 효과 */
+button:hover,
+a[href*="#portfolio"]:hover,
+a[href*="mailto"]:hover,
+a[href*="github"]:hover,
+a[href*="linkedin"]:hover {
+    cursor: pointer;
+}
+
+/* 섹션 경계선 */
+section {
+    position: relative;
+}
+
+/* 모바일 메뉴 애니메이션 */
+#mobileMenu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 스크롤 시 페이드 인 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3B82F6, #8B5CF6, #10B981);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #2563EB, #7C3AED, #059669);
+}
