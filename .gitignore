@@ -16,3 +16,5 @@ Thumbs.db
 # Node (향후 사용 대비)
 node_modules/
 npm-debug.log*
+
+.claude/settings.local.json
